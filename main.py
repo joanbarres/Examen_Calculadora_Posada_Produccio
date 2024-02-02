@@ -12,9 +12,9 @@ print("Iniciando calculadora...")
 menu.menu()
 
 while True:
-    operacion = input("Introduzca la operacion a realizar: ")
+    caracter = input("Introduzca la operacion a realizar: ")
 
-    if operacion != "salir":
+    if caracter != "salir":
         try:
             def operador(caracter):
                 if caracter == "+":
@@ -53,6 +53,7 @@ while True:
                             break
                     return mitjana.mitjana(lista)
                 else:
+                    print("Introduzca una operacion valida")
                     raise ValueError("Operación no válida")
         except ValueError as valErr:
             print(f"Error: {valErr}")
@@ -62,3 +63,5 @@ while True:
             print(f"Error inesperado: {e}")
     else:
         break
+
+print(operador(caracter))
